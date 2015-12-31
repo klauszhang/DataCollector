@@ -26,6 +26,12 @@ namespace DataCollector.DAL
 
             modelBuilder.Configurations.Add(new UserDeviceConfiguration());
             modelBuilder.Configurations.Add(new KeyValueDataConfiguration());
+            modelBuilder.Configurations.Add(new DeviceProfileConfiguration());
+        }
+
+        public static DCDbContext Create()
+        {
+            return new DCDbContext();
         }
     }
 }

@@ -1,0 +1,80 @@
+﻿@model IQueryable<DataCollector.DomainModel.DCUser>
+
+<h2>User List</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            @Html.ActionLink("Create New User", "Create", "Users", null, new { @class = "btn btn-primary btn-sm" })
+            @Html.ActionLink("Deleted Users", "DeletedList", "Users", null, new { @class = "btn btn-default btn-sm" })
+        </div>
+        <div class="col-md-6">
+            @{Html.RenderAction("SearchForUser", "Users");}
+        </div>
+
+    </div>
+
+    <br />
+
+    <table class="table table-hover table-condensed">
+        <tr>
+            <th>User Name</th>
+            <th>Email Confirmed</th>
+            <th>Email</th>
+            <th>Locked Until</th>
+            <th></th>
+        </tr>
+
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.EmailConfirmed</td>
+                <td>@user.Email</td>
+                <td>
+                    @{ var lockTime = (user.LockoutEndDateUtc <= DateTime.UtcNow || user.LockoutEndDateUtc == null) ?
+              string.Empty:((DateTime)user.LockoutEndDateUtc).ToLocalTime().ToString("yyyy-MM-dd HH:mm");}
+
+                    @lockTime
+
+                </td>
+
+                <td>
+                    @if (user.LockoutEndDateUtc <= DateTime.UtcNow || user.LockoutEndDateUtc == null)
+                    {
+                        @Html.ActionLink("Lock", "Lock", "Users", new { id = user.Id }, new { @class = "btn btn-warning btn-xs" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Unlock", "Unlock", "Users", new { id = user.Id }, new { @class = "btn btn-success btn-xs" })
+                    }
+
+                    @if (user.EmailConfirmed == false && user.Email != null)
+                    {
+                        @Html.ActionLink("Confirm Email", "SendConfirmEmail", "Users", new { id = user.Id }, new { @class = "btn btn-xs btn-warning" })
+                    }
+
+                    @Html.ActionLink("Details", "Detail", "Users", new { id = user.Id }, new { @class = "btn btn-xs btn-default" })
+
+                    @Html.ActionLink("Edit", "Edit", "Users", new { id = user.Id }, new { @class = "btn btn-xs btn-default" })
+                    @Html.ActionLink("Delete", "Delete", "Users", new { id = user.Id }, new { @class = "btn btn-xs btn-danger" })
+                </td>
+            </tr>
+                        }
+    </table>
+</div>
+
+
+@*@Html.Editor("whatever", new {
+        htmlAttributes = new
+        {
+            @id= "whatever",
+            @class="ui-autocomplete-input form-control",
+            data_url = Url.Action("GetUserNamesForAutoComplete", "Users")
+        }
+    })*@
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="~/Scripts/javascriptfile.js"></script>
+}

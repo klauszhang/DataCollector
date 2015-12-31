@@ -1,0 +1,23 @@
+﻿@model DataCollector.Entities.ManageIndexViewModel
+@{
+    ViewBag.Title = "Dash Board";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<p class="text-warning">
+    @ViewData["ResultMessage"]
+</p>
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+    <h4>Hello, @ViewBag.UserName </h4>
+    <hr />
+    <div>
+        @Html.ActionLink("Change your password", "ChangePassword", null, new { @class = "btn btn-xs btn-warning" })
+    </div>
+
+    <hr />
+    <div>
+        @Html.Partial("_Devices",Model.Devices)
+    </div>
+</div>

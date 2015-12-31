@@ -1,0 +1,25 @@
+﻿@model DataCollector.Entities.DeleteUserViewModel
+
+@{ 
+    ViewBag.Title = "Reactive " + Model.UserName;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+@using (Html.BeginForm("Reactive", "Users", new { id = Model.Id }, FormMethod.Post, null))
+{
+    @Html.AntiForgeryToken();
+    <div class="form-group">
+        @Html.LabelFor(m => m.Id, new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.Id, new { @class = "form-control", @disabled = "disabled" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.UserName)
+        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @disabled = "disabled" })
+    </div>
+
+    <input type="submit" class="btn btn-success" value="Reactive" />
+    @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+}

@@ -1,0 +1,65 @@
+﻿@model DataCollector.Entities.EditUserViewModel
+
+@{
+    ViewBag.Title = "Edit " + Model.UserName;
+}
+
+
+<h2>@ViewBag.Title</h2>
+<div class="container">
+    @using (Html.BeginForm("Edit", "Users", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        @Html.HiddenFor(m => m.Id)
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 form-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 form-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-3">
+                @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+            </div>
+            <div class="col-md-3">
+                <input type="submit" class="btn btn-primary" value="Save Changes" />
+            </div>
+
+        </div>
+
+        <div class="col-md-7 row">
+            <div class="panel panel-danger">
+                <div class="panel panel-heading">Danger Zone</div>
+                <div class="panel-body">
+                    <div class="label label-info"></div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 form-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Password, new { @class = "form-control form-sm",  })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-footer">
+                    @Html.ActionLink("Delete this user", "Delete", "Users", new { id = Model.Id }, new { @class = "btn btn-danger" })
+                </div>
+            </div>
+
+        </div>
+
+    }
+
+</div>
