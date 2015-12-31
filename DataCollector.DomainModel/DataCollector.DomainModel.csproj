@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DCUser.cs" />
+    <Compile Include="DeviceProfile.cs" />
     <Compile Include="KeyValueData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserDevice.cs" />

@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\DeviceProfileConfiguration.cs" />
     <Compile Include="Configuration\KeyValueDataConfiguration.cs" />
     <Compile Include="Configuration\UserDeviceConfiguration.cs" />
     <Compile Include="DCDbContext.cs" />
@@ -67,6 +68,18 @@
     <Compile Include="Migrations\201512280247056_AddCreatedOnInKeyValueData.cs" />
     <Compile Include="Migrations\201512280247056_AddCreatedOnInKeyValueData.Designer.cs">
       <DependentUpon>201512280247056_AddCreatedOnInKeyValueData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512280540581_addUserDeleteProperty.cs" />
+    <Compile Include="Migrations\201512280540581_addUserDeleteProperty.Designer.cs">
+      <DependentUpon>201512280540581_addUserDeleteProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512280856358_AddDeviceProfile.cs" />
+    <Compile Include="Migrations\201512280856358_AddDeviceProfile.Designer.cs">
+      <DependentUpon>201512280856358_AddDeviceProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512300203216_AddForeignKeyForUserDevice.cs" />
+    <Compile Include="Migrations\201512300203216_AddForeignKeyForUserDevice.Designer.cs">
+      <DependentUpon>201512300203216_AddForeignKeyForUserDevice.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,6 +100,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512280247056_AddCreatedOnInKeyValueData.resx">
       <DependentUpon>201512280247056_AddCreatedOnInKeyValueData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512280540581_addUserDeleteProperty.resx">
+      <DependentUpon>201512280540581_addUserDeleteProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512280856358_AddDeviceProfile.resx">
+      <DependentUpon>201512280856358_AddDeviceProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512300203216_AddForeignKeyForUserDevice.resx">
+      <DependentUpon>201512300203216_AddForeignKeyForUserDevice.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

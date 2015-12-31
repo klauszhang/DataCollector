@@ -12,17 +12,16 @@ namespace DataCollector.DAL.Configuration
     {
         public UserDeviceConfiguration()
         {
-            Property(ud => ud.PropertyName)
-                .HasMaxLength(40)
-                .IsRequired();
-
-            Property(ud => ud.PropertyValue)
-                .HasMaxLength(100)
-                .IsRequired();
-
             HasRequired(ud => ud.DCUser)
                 .WithMany(du=>du.UserDevices)
+                .HasForeignKey(ud=>ud.UserId)
                 .WillCascadeOnDelete(false);
+
+            HasMany(ud => ud.DeviceProfiles)
+                .WithRequired();
+
+            Property(du => du.UserId)
+                .IsRequired();
         }
     }
 }
