@@ -81,6 +81,14 @@
     <Compile Include="Migrations\201512300203216_AddForeignKeyForUserDevice.Designer.cs">
       <DependentUpon>201512300203216_AddForeignKeyForUserDevice.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601010006569_AddCreatedByFKInKeyValueData.cs" />
+    <Compile Include="Migrations\201601010006569_AddCreatedByFKInKeyValueData.Designer.cs">
+      <DependentUpon>201601010006569_AddCreatedByFKInKeyValueData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601010023141_kvFK.cs" />
+    <Compile Include="Migrations\201601010023141_kvFK.Designer.cs">
+      <DependentUpon>201601010023141_kvFK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -109,6 +117,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512300203216_AddForeignKeyForUserDevice.resx">
       <DependentUpon>201512300203216_AddForeignKeyForUserDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601010006569_AddCreatedByFKInKeyValueData.resx">
+      <DependentUpon>201601010006569_AddCreatedByFKInKeyValueData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601010023141_kvFK.resx">
+      <DependentUpon>201601010023141_kvFK.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

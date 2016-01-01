@@ -19,6 +19,7 @@ namespace DataCollector.DAL
 
         public DbSet<UserDevice> UserDevices { get; set; }
         public DbSet<KeyValueData> KeyValueData { get; set; }
+        public DbSet<DeviceProfile> DeviceProfiles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

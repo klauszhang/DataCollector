@@ -19,8 +19,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCollector.Mvc", "DataCollector.Mvc\DataCollector.Mvc.csproj", "{B036064A-214B-42BC-BC89-2BDB17B0C477}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCollector.Api", "DataCollector.Api\DataCollector.Api.csproj", "{AD524FAE-C7F4-474A-8BAF-C59D12D23394}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,10 +49,6 @@ Global
 		{B036064A-214B-42BC-BC89-2BDB17B0C477}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B036064A-214B-42BC-BC89-2BDB17B0C477}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B036064A-214B-42BC-BC89-2BDB17B0C477}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AD524FAE-C7F4-474A-8BAF-C59D12D23394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD524FAE-C7F4-474A-8BAF-C59D12D23394}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AD524FAE-C7F4-474A-8BAF-C59D12D23394}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AD524FAE-C7F4-474A-8BAF-C59D12D23394}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +57,5 @@ Global
 		{4E840959-4533-4361-89B2-E42921B54734} = {1A9D4503-AF82-4068-B1D6-F3855CB9946D}
 		{18A5CD0C-0EAB-47ED-B0BE-1CE74FEDAA1B} = {1A9D4503-AF82-4068-B1D6-F3855CB9946D}
 		{B036064A-214B-42BC-BC89-2BDB17B0C477} = {22A01DFF-845C-4389-AB6D-BE9B46A0DB2E}
-		{AD524FAE-C7F4-474A-8BAF-C59D12D23394} = {22A01DFF-845C-4389-AB6D-BE9B46A0DB2E}
 	EndGlobalSection
 EndGlobal

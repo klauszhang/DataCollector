@@ -26,6 +26,11 @@ namespace DataCollector.DAL.Configuration
             HasRequired(kv => kv.UserDevice)
                 .WithMany()
                 .WillCascadeOnDelete(false);
+
+            HasRequired(kv => kv.CreatedBy)
+                .WithMany()
+                .HasForeignKey(kv => kv.CreatedByUserId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

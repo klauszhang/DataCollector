@@ -119,6 +119,8 @@
     <Compile Include="Device\DeviceType.cs" />
     <Compile Include="Device\NewDeviceViewModel.cs" />
     <Compile Include="Factory\ModelFactory.cs" />
+    <Compile Include="KeyValueDataViewModel.cs" />
+    <Compile Include="KeyValueOutputViewModel.cs" />
     <Compile Include="ManageIndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Account\AccountViewModels.cs" />

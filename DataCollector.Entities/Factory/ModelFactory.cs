@@ -15,7 +15,7 @@ namespace DataCollector.Entities
         {
             return new UserDevice
             {
-                UserId=userId,
+                UserId = userId,
                 DeviceName = vm.DeviceName,
 
                 //TODO 
@@ -23,6 +23,37 @@ namespace DataCollector.Entities
 
 
             };
+        }
+
+        public KeyValueData Create(KeyValueDataViewModel vm, string currentUserId, UserDevice device)
+        {
+            // TODO
+            return new KeyValueData
+            {
+                CreatedByUserId = currentUserId,
+                CreatedOn = DateTime.UtcNow,
+                Key = vm.Key,
+                Value = vm.Value,
+                UserDevice = device
+            };
+        }
+
+        public List<KeyValueOutputViewModel> Create(List<KeyValueData> data)
+        {
+            List<KeyValueOutputViewModel> result = new List<KeyValueOutputViewModel>();
+            foreach (var elem in data)
+            {
+                result.Add(new KeyValueOutputViewModel
+                {
+                    CreatedBy = elem.CreatedBy,
+                    CreatedOn = elem.CreatedOn,
+                    Id = elem.Id,
+                    Key = elem.Key,
+                    Value = elem.Value,
+                    UserDevice = elem.UserDevice
+                });
+            }
+            return result;
         }
     }
 }
